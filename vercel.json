@@ -1,14 +1,14 @@
 {
   "builds": [
     {
-      "src": "你的文件夹名/index.html",
+      "src": "test-program/index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/你的文件夹名/index.html"
+      "dest": "/test-program/index.html"
       }
     ]
   }
