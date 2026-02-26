@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生课前准备清单 | OpenClaw & Vibe Coding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { dark: '#0f172a', card: '#1e293b', accent: '#38bdf8', highlight: '#f43f5e', lobster: '#FF4500' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .code-block { background-color: #000; border-radius: 0.5rem; padding: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #a5b4fc; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        th { color: #94a3b8; font-weight: 600; font-size: 0.875rem; }
+        td { color: #e2e8f0; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white pb-20" id="top">
+
+    <header class="relative overflow-hidden py-16 px-6 text-center border-b border-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-accent font-mono text-sm tracking-widest mb-2 block">课前准备</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+                学生课前准备清单
+            </h1>
+            <p class="text-xl text-gray-400 mb-8 font-light">
+                完成 <strong class="text-white">OpenClaw 课程</strong> 与 <strong class="text-white">Vibe Coding 课程</strong> 所需准备汇总
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-mono text-gray-300">
+                <a href="vibe_coding.html" class="px-4 py-2 bg-card rounded-lg border border-gray-700 hover:border-accent transition-colors">Vibe Coding</a>
+                <a href="openclaw_course.html" class="px-4 py-2 bg-card rounded-lg border border-gray-700 hover:border-lobster transition-colors">OpenClaw 课程</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="max-w-5xl mx-auto px-6 mt-6 sticky top-0 z-10 bg-dark/95 backdrop-blur py-2 border-b border-gray-800">
+        <div class="flex flex-wrap gap-2 text-xs">
+            <a href="#vibe" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">Vibe Coding</a>
+            <a href="#openclaw" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">OpenClaw</a>
+            <a href="#summary" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">快速总结</a>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 mt-10 space-y-16">
+
+        <!-- ========== 一、Vibe Coding 课程 ========== -->
+        <section id="vibe" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">✨</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">一、Vibe Coding 课程</h2>
+                    <p class="text-accent"><a href="vibe_coding.html" class="hover:underline">vibe_coding.html</a></p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl mb-6">
+                <h3 class="text-lg font-bold text-white mb-4">必须就绪</h3>
+                <table>
+                    <thead>
+                        <tr><th>项目</th><th>说明</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Cursor 或 Trae</strong></td><td>AI IDE，至少装一个。Cursor：cursor.sh；Trae：trae.ai</td></tr>
+                        <tr><td><strong>Node.js</strong></td><td>LTS 版本，终端 <code class="text-accent">node -v</code> 验证</td></tr>
+                        <tr><td><strong>Git + GitHub 账号</strong></td><td>代码版本管理、实战部署</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl mb-6">
+                <h3 class="text-lg font-bold text-white mb-4">可选加分</h3>
+                <table>
+                    <thead>
+                        <tr><th>项目</th><th>说明</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>MCP Server</td><td>配置 filesystem、fetch 等（~/.cursor/mcp.json）</td></tr>
+                        <tr><td>Skill 文件</td><td>提前准备 .skills/ 目录下的 SKILL.md</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl">
+                <h3 class="text-lg font-bold text-white mb-4">快速验证</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li>• Cmd+K → 输入 "create a hello world HTML" → 看 AI 是否响应</li>
+                    <li>• 终端 <code class="text-accent">node -v</code> → 确认 Node.js 可用</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== 二、OpenClaw 课程 ========== -->
+        <section id="openclaw" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">🦞</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">二、OpenClaw 课程</h2>
+                    <p class="text-lobster"><a href="openclaw_course.html" class="hover:underline">openclaw_course.html</a></p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl mb-6">
+                <h3 class="text-lg font-bold text-white mb-4">必须就绪</h3>
+                <table>
+                    <thead>
+                        <tr><th>项目</th><th>说明</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Node.js ≥22</strong></td><td>终端 <code class="text-accent">node -v</code> 验证</td></tr>
+                        <tr><td><strong>npm 或 pnpm</strong></td><td>包管理器，安装 OpenClaw</td></tr>
+                        <tr><td><strong>终端 / 命令行</strong></td><td>macOS Terminal；Windows 建议 WSL2</td></tr>
+                        <tr><td><strong>AI 模型访问</strong></td><td>Anthropic / OpenAI 等，OAuth 订阅或 API Key</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl mb-6">
+                <h3 class="text-lg font-bold text-white mb-4">按需准备</h3>
+                <table>
+                    <thead>
+                        <tr><th>项目</th><th>用途</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>腾讯云账号</strong></td><td>飞书接入需轻量云 Lighthouse</td></tr>
+                        <tr><td><strong>飞书企业</strong></td><td>飞书开放平台创建自建应用、获取 AppID/AppSecret</td></tr>
+                        <tr><td><strong>Telegram</strong></td><td>用 @BotFather 创建 Bot 获取 token</td></tr>
+                        <tr><td><strong>GitHub 账号</strong></td><td>ClawHub 登录、工作区备份</td></tr>
+                        <tr><td><strong>Cursor / Trae</strong></td><td>编辑 SOUL.md、AGENTS.md 等（可选）</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl">
+                <h3 class="text-lg font-bold text-white mb-4">按学习路径</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li>• <strong class="text-white">仅本地体验</strong>：Node.js + npm/pnpm + 终端 + 模型访问</li>
+                    <li>• <strong class="text-white">飞书接入</strong>：+ 腾讯云 + 飞书企业</li>
+                    <li>• <strong class="text-white">ClawHub 发布 Skill</strong>：+ GitHub 账号</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== 三、快速总结 ========== -->
+        <section id="summary" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">📋</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">三、两门课程通用准备（快速总结）</h2>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl">
+                <table>
+                    <thead>
+                        <tr><th>类别</th><th>项目</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>必装</strong></td><td>Node.js（LTS / ≥22）、Cursor 或 Trae、Git、终端</td></tr>
+                        <tr><td><strong>必注册</strong></td><td>GitHub 账号、AI 模型（Anthropic/OpenAI 等）</td></tr>
+                        <tr><td><strong>选装</strong></td><td>腾讯云（飞书）、飞书企业、Telegram Bot、MCP Server</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-5xl mx-auto px-6 mt-16 pb-8 text-center text-gray-500 text-sm">
+        <p>文档路径：<code class="text-gray-400">docs/student_prep.md</code> · <a href="student_prep.html" class="text-accent hover:underline">student_prep.html</a></p>
+    </footer>
+
+</body>
+</html>

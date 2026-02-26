@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding 线下进阶营 | 全天深度课程</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent: '#38bdf8',
+                        highlight: '#f43f5e',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .code-block {
+            background-color: #000;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: #a5b4fc;
+            overflow-x: auto;
+        }
+        .section-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .trae-accent { border-left: 4px solid #22c55e; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white pb-20" id="top">
+
+    <header class="relative overflow-hidden py-16 px-6 text-center border-b border-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-accent font-mono text-sm tracking-widest mb-2 block">线下进阶营</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="gradient-text">Vibe Coding</span> 全天深度课程
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 font-light">
+                "从零到产品：Vibe Coding 全栈实战"<br>
+                <span class="text-base text-gray-500">用自然语言驱动 AI，一天内从概念到上线</span>
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-mono text-gray-300">
+                <div class="px-4 py-2 bg-card rounded-lg border border-gray-700">
+                    🕒 09:00 - 17:00 (7小时)
+                </div>
+                <div class="px-4 py-2 bg-card rounded-lg border border-gray-700">
+                    👥 适合人群：具备基础 AI 认知，想掌握 AI 编程新范式
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- AI 使用现状：强调 Vibe Coding 的重要性 -->
+    <section class="max-w-5xl mx-auto px-6 mt-8">
+        <div class="glass-card p-6 rounded-xl border-l-4 border-highlight">
+            <h2 class="text-lg font-bold text-white mb-4">📊 全球 AI 使用现状</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm mb-4">
+                <div class="bg-gray-800/50 p-4 rounded-lg">
+                    <div class="text-gray-400 mb-1">完全没使用 AI</div>
+                    <div class="text-2xl font-bold text-white">约 68 亿人</div>
+                </div>
+                <div class="bg-gray-800/50 p-4 rounded-lg">
+                    <div class="text-gray-400 mb-1">免费使用 AI 聊天机器人</div>
+                    <div class="text-2xl font-bold text-accent">约 13 亿人</div>
+                </div>
+                <div class="bg-gray-800/50 p-4 rounded-lg">
+                    <div class="text-gray-400 mb-1">为 AI 付费</div>
+                    <div class="text-2xl font-bold text-white">约 1,500–2,500 万人</div>
+                </div>
+                <div class="bg-highlight/20 border border-highlight/40 p-4 rounded-lg">
+                    <div class="text-gray-300 mb-1">用 AI 编程</div>
+                    <div class="text-2xl font-bold text-highlight">约 200–500 万人</div>
+                    <div class="text-xs text-highlight mt-1">（0.04%）</div>
+                </div>
+            </div>
+            <p class="text-gray-400 text-sm border-t border-gray-700 pt-4">
+                <strong class="text-white">掌握 Vibe Coding，你就站在了 AI 时代的金字塔尖。</strong>
+                用 AI 编程的人仅占全球人口的 0.04%——今天的学习，是通往未来的稀缺能力。
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-6 mt-10 space-y-16">
+
+        <section id="morning">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">🌅</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">上午场：认知篇</h2>
+                    <p class="text-accent">理解 Vibe Coding 全貌（09:00-12:00）</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">1</span> 编程正在被重新定义</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <blockquote class="border-l-4 border-accent pl-4 italic text-gray-400 mb-4">
+                        "I just see things, say things, run things, and copy-paste things, and it mostly works." <br>
+                        <span class="text-sm not-italic text-gray-500">— Andrej Karpathy 演讲</span>
+                    </blockquote>
+                    <div class="aspect-video w-full max-w-2xl rounded-lg overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/LCEmiRjPEtQ" title="Andrej Karpathy 演讲" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-400 mb-2">🧱 传统编程</h4>
+                            <p class="text-sm">你是建筑工人，一砖一瓦自己砌。</p>
+                        </div>
+                        <div class="bg-indigo-900/30 border border-indigo-500/30 p-4 rounded-lg">
+                            <h4 class="font-bold text-accent mb-2">🏗️ Vibe Coding</h4>
+                            <p class="text-sm">你是建筑师，画图纸，AI 施工队执行。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">2</span> Vibe Coding 概念深度解析</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div class="bg-gray-900 p-4 rounded-lg text-center font-mono text-accent">
+                        Vibe Coding = 清晰的意图描述 + AI 代码生成 + 人类审查迭代
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-400">
+                            <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                                <tr>
+                                    <th class="px-4 py-3">维度</th>
+                                    <th class="px-4 py-3">传统编程</th>
+                                    <th class="px-4 py-3 text-accent">Vibe Coding</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-700">
+                                    <td class="px-4 py-3 font-medium">核心技能</td>
+                                    <td class="px-4 py-3">语法记忆 + 算法设计</td>
+                                    <td class="px-4 py-3 text-white">需求表达 + 代码审查</td>
+                                </tr>
+                                <tr class="border-b border-gray-700">
+                                    <td class="px-4 py-3 font-medium">开发速度</td>
+                                    <td class="px-4 py-3">慢（逐行编写）</td>
+                                    <td class="px-4 py-3 text-white">快（批量生成）</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-medium">最大瓶颈</td>
+                                    <td class="px-4 py-3">编码能力</td>
+                                    <td class="px-4 py-3 text-white">需求表达能力 + 审查能力</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mt-4">
+                        <div>
+                            <h4 class="font-bold text-red-400 mb-2">三大误区 ❌</h4>
+                            <ul class="list-disc list-inside text-sm space-y-1 text-gray-400">
+                                <li>完全不需要懂代码（你需要能读懂）</li>
+                                <li>AI 不会出 Bug（它的 Bug 更隐蔽）</li>
+                                <li>只能做 Demo（可做生产级项目）</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-2">五大核心技巧 ✅</h4>
+                            <ul class="list-disc list-inside text-sm space-y-1 text-gray-400">
+                                <li>Spec 式 Prompt (产品文档化)</li>
+                                <li>分步迭代 (Step by Step)</li>
+                                <li>上下文管理 (Context Is King)</li>
+                                <li>约束边界 (不要做什么)</li>
+                                <li>持续 Review (不盲目 Accept)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Claude Code 创始人 Boris Cherny 的 10 条 Vibe Coding 原则 -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center mr-3 text-sm">★</span> Claude Code 创始人的 10 条 Vibe Coding 原则</h3>
+                <div class="glass-card p-6 rounded-xl border-l-4 border-accent">
+                    <p class="text-gray-400 text-sm mb-4">
+                        <strong class="text-white">Boris Cherny</strong>（Claude Code 创始人、Anthropic Head of Claude Code）于 2026 年 1 月在 X 分享其团队实际使用 Claude Code 的 10 条原则，获得 850 万+ 浏览。这些原则适用于所有 AI 辅助编程场景。
+                    </p>
+                    <ol class="space-y-3 text-gray-300 text-sm list-decimal list-inside">
+                        <li><strong class="text-white">并行工作</strong> — 启动 3–5 个 git worktree，每个运行独立的 Claude 会话，成倍提升吞吐量</li>
+                        <li><strong class="text-white">复杂任务先 Plan</strong> — 用 Shift+Tab 进入 Plan 模式，在计划上投入精力，让 AI 能一次完成实现</li>
+                        <li><strong class="text-white">投资 CLAUDE.md</strong> — 每次修正后让 AI 更新记忆文件：「Update your CLAUDE.md so you don't make that mistake again」</li>
+                        <li><strong class="text-white">创建 Skills 并提交 Git</strong> — 团队共享工作流，常用操作做成 slash command，如 <code class="text-accent">/techdebt</code></li>
+                        <li><strong class="text-white">让 AI 自主修 Bug</strong> — 启用 MCP（Slack、CI 等），粘贴 Bug 链接说「fix」，结果导向而非 micromanage</li>
+                        <li><strong class="text-white">提升 Prompt 技巧</strong> — 让 AI 做 Reviewer：「Grill me on these changes」；迭代而非重来；给 AI 验证闭环可 2–3x 质量</li>
+                        <li><strong class="text-white">终端与环境</strong> — 自定义 statusline、Post-tool hooks 自动格式化、<code class="text-accent">/permissions</code> 预放行常用命令</li>
+                        <li><strong class="text-white">使用 Subagents</strong> — 复杂任务加「use subagents」，并行探索；用 Ctrl+B 后台运行</li>
+                        <li><strong class="text-white">用 AI 做数据与分析</strong> — 在开发环境内用 BigQuery、PostgreSQL 等 CLI，让 AI 写查询并解读结果</li>
+                        <li><strong class="text-white">用 AI 学习</strong> — 生成可视化 HTML 讲解陌生代码；启用 Learning 输出风格，让 AI 解释「为什么」</li>
+                    </ol>
+                    <div class="mt-4 pt-4 border-t border-gray-700 flex flex-wrap gap-2 text-xs">
+                        <a href="https://code.claude.com/" target="_blank" rel="noopener" class="text-accent hover:underline">Claude Code</a>
+                        <span class="text-gray-600">•</span>
+                        <a href="https://www.jitendrazaa.com/blog/others/tips/10-claude-code-tips-from-the-creator-boris-cherny-february/" target="_blank" rel="noopener" class="text-accent hover:underline">10 Claude Code Tips 原文</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">3</span> AI IDE 工具全景</h3>
+                <p class="text-sm text-gray-400 mb-4">市面领先的 Vibe Coding 工具与插件，按独立 IDE 与扩展分类。</p>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-accent mb-3 text-sm uppercase tracking-wider">独立 IDE / 桌面应用</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-400">
+                                <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                                    <tr>
+                                        <th class="px-4 py-3">工具</th>
+                                        <th class="px-4 py-3">出品方</th>
+                                        <th class="px-4 py-3">核心优势</th>
+                                        <th class="px-4 py-3">中文</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Cursor</td>
+                                        <td class="px-4 py-3">Cursor</td>
+                                        <td class="px-4 py-3">VSCode fork，Agent 能力最强，生态成熟</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Trae</td>
+                                        <td class="px-4 py-3">字节跳动</td>
+                                        <td class="px-4 py-3">AI 原生 IDE，Chat/Builder/SOLO 三模式，免费额度多</td>
+                                        <td class="px-4 py-3">⭐⭐⭐⭐⭐</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Antigravity</td>
+                                        <td class="px-4 py-3">Google</td>
+                                        <td class="px-4 py-3">Agent-First，多 Agent 并行，浏览器内测、Artifacts 交付</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Qoder</td>
+                                        <td class="px-4 py-3">Qoder</td>
+                                        <td class="px-4 py-3">Quest 模式自主执行，Repo Wiki 自动文档，支持 10 万文件</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Opencode</td>
+                                        <td class="px-4 py-3">开源社区</td>
+                                        <td class="px-4 py-3">开源、模型无关，终端/桌面/扩展，隐私优先</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-accent mb-3 text-sm uppercase tracking-wider">IDE 插件 / 扩展</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-400">
+                                <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                                    <tr>
+                                        <th class="px-4 py-3">工具</th>
+                                        <th class="px-4 py-3">出品方</th>
+                                        <th class="px-4 py-3">核心优势</th>
+                                        <th class="px-4 py-3">中文</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">GitHub Copilot</td>
+                                        <td class="px-4 py-3">Microsoft/GitHub</td>
+                                        <td class="px-4 py-3">智能补全、Copilot Chat、企业级生态，VS Code/JetBrains 等</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Claude Code</td>
+                                        <td class="px-4 py-3">Anthropic</td>
+                                        <td class="px-4 py-3">自主 Agent，90+ 分钟长任务，VS Code/JetBrains 原生集成</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Codex</td>
+                                        <td class="px-4 py-3">OpenAI</td>
+                                        <td class="px-4 py-3">ChatGPT 集成，多 Agent 工作流，Skills + Automations</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Cline</td>
+                                        <td class="px-4 py-3">开源</td>
+                                        <td class="px-4 py-3">VS Code 扩展，自主执行命令/编辑，5.8 万 GitHub star</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-3 font-bold text-white">Codebuddy</td>
+                                        <td class="px-4 py-3">Codebuddy</td>
+                                        <td class="px-4 py-3">多文件 AI 编程，12.8 万 token 上下文，语音对话</td>
+                                        <td class="px-4 py-3">⭐⭐⭐</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <h4 class="font-bold text-gray-300 mb-2 text-sm">其他主流</h4>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-1 bg-gray-700 rounded">Aider（终端）</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">Continue（开源）</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">Bolt.new（快速原型）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trae Agent 专项介绍 -->
+            <div id="trae-agent" class="mb-12 relative trae-accent scroll-mt-24">
+                <div class="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-transparent rounded-l"></div>
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white">
+                    <span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-3 text-sm">3.1</span>
+                    Trae Agent 介绍与使用方案 <span class="ml-2 px-2 py-0.5 bg-green-600/50 text-white text-xs rounded">字节出品</span>
+                </h3>
+                <div class="glass-card p-6 rounded-xl border-green-500/20 space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-2">📌 什么是 Trae？</h4>
+                        <p class="text-sm text-gray-400">
+                            Trae 是字节跳动推出的 <strong class="text-white">AI 原生集成开发环境（AI IDE）</strong>，核心定位是「自主智能体（Agent）」。
+                            国内版支持豆包、Kimi、DeepSeek 等国产模型，针对中文和技术栈深度优化；国际版支持 GPT、Gemini 等，支持超长上下文。
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-3">🔄 三种开发模式</h4>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                                <div class="text-green-400 font-mono text-xs mb-1">Chat 模式</div>
+                                <p class="text-sm text-gray-400">智能代码补全、问答、代码解释和优化</p>
+                            </div>
+                            <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                                <div class="text-green-400 font-mono text-xs mb-1">Builder 模式</div>
+                                <p class="text-sm text-gray-400">自然语言一键生成完整项目框架</p>
+                            </div>
+                            <div class="bg-green-900/20 p-4 rounded-lg border border-green-500/30">
+                                <div class="text-green-400 font-mono text-xs mb-1">SOLO 模式 ⭐</div>
+                                <p class="text-sm text-gray-400">AI 自主规划并执行开发任务，无需手动调用工具</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-3">📋 使用方案：快速开发智能体三步法</h4>
+                        <ol class="space-y-3 text-sm">
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">1</span>
+                                <div>
+                                    <strong class="text-white">下载工具</strong>：访问 <a href="https://trae.ai/" target="_blank" rel="noopener" class="text-accent hover:underline">trae.ai</a> 下载 IDE。国内版免费用 DeepSeek R1、豆包；国际版免费用 GPT 4.1 等。
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">2</span>
+                                <div>
+                                    <strong class="text-white">梳理需求</strong>：明确智能体的功能目标（如信息总结、网页浏览、文件生成等）。
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">3</span>
+                                <div>
+                                    <strong class="text-white">创建智能体</strong>：通过 MCP 市场添加工具（搜索、浏览网页、多步思考等），编写提示词（功能说明 + 可用工具 + 输出格式）。
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="bg-gray-900/50 p-4 rounded-lg">
+                        <h4 class="font-bold text-white mb-2 text-sm">核心特性</h4>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-1 bg-gray-700 rounded">多 LLM 支持</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">MCP 工具生态</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">长对话记忆</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">全仓库分析</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="agent-subagent" class="mb-12 relative scroll-mt-24">
+                <div class="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-highlight to-transparent rounded-l"></div>
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white">
+                    <span class="w-8 h-8 rounded-full bg-highlight text-white flex items-center justify-center mr-3 text-sm">4</span> 
+                    Agent 与 Sub-Agent：AI IDE 的"大脑" <span class="ml-2 px-2 py-0.5 bg-highlight text-white text-xs rounded">⭐ 重点</span>
+                </h3>
+                
+                <div class="glass-card p-6 rounded-xl border-highlight/30 space-y-8">
+                    <!-- 4.1 什么是 Agent -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">4.1 什么是 Agent（智能体）</h4>
+                        <p class="text-sm text-gray-400 mb-4">
+                            一句话定义：<strong class="text-white">Agent 不只是「回答问题」，它能自主规划、执行步骤、使用工具、观察结果、迭代修正。</strong>
+                        </p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-400">
+                                <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                                    <tr>
+                                        <th class="px-4 py-3">维度</th>
+                                        <th class="px-4 py-3">普通 Chat</th>
+                                        <th class="px-4 py-3 text-accent">Agent 模式</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3">做什么</td><td class="px-4 py-3">回答一个问题</td><td class="px-4 py-3 text-white">完成一个任务</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3">能否操作文件</td><td class="px-4 py-3">❌ 只输出文本</td><td class="px-4 py-3 text-white">✅ 创建/编辑/删除文件</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3">能否运行命令</td><td class="px-4 py-3">❌</td><td class="px-4 py-3 text-white">✅ 执行终端命令</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3">能否搜索代码</td><td class="px-4 py-3">❌</td><td class="px-4 py-3 text-white">✅ 搜索整个项目</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3">多步骤推理</td><td class="px-4 py-3">有限</td><td class="px-4 py-3 text-white">✅ 制定计划 → 逐步执行</td></tr>
+                                    <tr><td class="px-4 py-3">错误处理</td><td class="px-4 py-3">需你手动修</td><td class="px-4 py-3 text-white">✅ 自动检测并修复</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 4.2 ReAct Loop -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">4.2 ReAct 工作循环（Think → Act → Observe）</h4>
+                        <p class="text-sm text-gray-400 mb-3">ReAct = Reasoning + Acting，让 AI 在推理中交替输出「思考」和「行动」，利用环境反馈不断迭代。</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-2 text-sm">
+                                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">1</span>
+                                    <div><strong class="text-white">Thought（思考）</strong>：规划下一步、整理已知信息、解释为何调用工具</div>
+                                </div>
+                                <div class="flex items-start gap-2 text-sm">
+                                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-green-600 text-white flex items-center justify-center text-xs">2</span>
+                                    <div><strong class="text-white">Action（行动）</strong>：发出结构化命令，触发文件操作、终端、搜索等</div>
+                                </div>
+                                <div class="flex items-start gap-2 text-sm">
+                                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs">3</span>
+                                    <div><strong class="text-white">Observation（观察）</strong>：记录环境反馈，为下一步推理提供依据</div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-900 p-4 rounded-lg">
+                                <div class="text-xs font-bold text-accent mb-2">Todo App 实战示例</div>
+                                <pre class="text-xs text-gray-300 font-mono leading-relaxed">
+Think: "需要 HTML/CSS/JS 三个文件"
+Act:   创建 index.html，写入结构
+Observe: 文件创建成功 ✓
+
+Think: "接下来写样式"
+Act:   创建 style.css
+Observe: 完成 ✓
+
+Think: "写逻辑并测试"
+Act:   创建 app.js + 运行 live-server
+Observe: 页面正常渲染 ✅
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.3 Agent 工具库 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">4.3 Agent 的工具库（Tools）</h4>
+                        <p class="text-sm text-gray-400 mb-3">Agent 不是「空想家」，它有一套真实的「武器库」：</p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                            <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
+                                <div class="text-accent font-mono text-xs mb-1">📁 文件操作</div>
+                                <div class="text-xs text-gray-400">创建、读取、编辑、删除</div>
+                            </div>
+                            <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
+                                <div class="text-accent font-mono text-xs mb-1">⌨️ 终端命令</div>
+                                <div class="text-xs text-gray-400">npm install, git commit</div>
+                            </div>
+                            <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
+                                <div class="text-accent font-mono text-xs mb-1">🔍 代码搜索</div>
+                                <div class="text-xs text-gray-400">查找引用、符号、跨文件</div>
+                            </div>
+                            <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
+                                <div class="text-accent font-mono text-xs mb-1">🌐 浏览器</div>
+                                <div class="text-xs text-gray-400">打开网页、截图、交互</div>
+                            </div>
+                            <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
+                                <div class="text-accent font-mono text-xs mb-1">🔧 Lint/Build</div>
+                                <div class="text-xs text-gray-400">检测并修复报错</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.4 Sub-Agent -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">4.4 什么是 Sub-Agent（子智能体）</h4>
+                        <p class="text-sm text-gray-400 mb-3">复杂任务时，主 Agent 派生子任务给 Sub-Agent 独立执行。</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <div class="text-sm font-bold text-gray-300 mb-2">为什么需要 Sub-Agent？</div>
+                                <ul class="space-y-2 text-sm text-gray-400">
+                                    <li class="flex items-start gap-2"><span class="text-accent">🧠</span> 上下文窗口有限，子任务拆分后各自独立</li>
+                                    <li class="flex items-start gap-2"><span class="text-accent">🎯</span> 专注度更高，每 Agent 只做一件事</li>
+                                    <li class="flex items-start gap-2"><span class="text-accent">⚡</span> 可并行执行，加速开发</li>
+                                    <li class="flex items-start gap-2"><span class="text-accent">🛡️</span> 风险隔离，一个失败不影响其他</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-900 p-4 rounded-lg">
+                                <div class="text-xs font-bold text-accent mb-2">核心隐喻</div>
+                                <pre class="text-xs text-gray-300 font-mono leading-relaxed">
+主 Agent = 项目经理（统筹、分配）
+Sub-Agent = 专项工程师（专注执行）
+
+用户: "做一个博客，有列表、详情、评论"
+
+主 Agent:
+├─→ Sub-Agent 1: 列表页 → ArticleList.jsx
+├─→ Sub-Agent 2: 详情页 → ArticleDetail.jsx
+├─→ Sub-Agent 3: 评论组件 → Comments.jsx
+└── 汇总 → 整合路由 → 测试 ✅
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.5 各 IDE 实现 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">4.5 各 AI IDE 的 Agent 实现</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-400">
+                                <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                                    <tr>
+                                        <th class="px-4 py-3">IDE</th>
+                                        <th class="px-4 py-3">Agent 模式名称</th>
+                                        <th class="px-4 py-3">Sub-Agent</th>
+                                        <th class="px-4 py-3">特色</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">Cursor</td><td class="px-4 py-3">Composer Agent</td><td class="px-4 py-3">✅ 内部自动拆分</td><td class="px-4 py-3">最成熟，跨文件操作，自动 Apply</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">Trae</td><td class="px-4 py-3">Builder / SOLO</td><td class="px-4 py-3">✅ 支持</td><td class="px-4 py-3">Duo/Solo 两种 Agent 模式</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">Claude Code</td><td class="px-4 py-3">Agentic CLI</td><td class="px-4 py-3">✅ 显式派发</td><td class="px-4 py-3">子任务派发过程最透明</td></tr>
+                                    <tr><td class="px-4 py-3 font-bold text-white">Copilot</td><td class="px-4 py-3">@workspace</td><td class="px-4 py-3">部分</td><td class="px-4 py-3">新功能，持续进化</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 4.6 最佳实践 -->
+                    <div class="border-t border-gray-700 pt-6">
+                        <h4 class="font-bold text-lg mb-3 text-white">4.6 最佳实践（Do's & Don'ts）</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <div class="text-green-400 font-bold text-sm mb-2">✅ DO</div>
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>• 给 Agent 清晰、完整的任务描述（像写 Spec）</li>
+                                    <li>• 让 Agent 先制定计划，你确认后再执行</li>
+                                    <li>• 复杂任务拆成多个独立 Agent 会话</li>
+                                    <li>• 每次 Agent 完成后审查代码 Diff</li>
+                                    <li>• 用 @file 明确指定相关文件，减少噪音</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="text-red-400 font-bold text-sm mb-2">❌ DON'T</div>
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>• 一次给 Agent 太多不相关任务</li>
+                                    <li>• 让 Agent 修改你不了解的核心代码</li>
+                                    <li>• 不看代码就盲目 Accept All</li>
+                                    <li>• 在一个超长会话里做所有事（上下文溢出）</li>
+                                    <li>• 忽略 Agent 的中间计划，直接催结果</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. 模型选择策略（扩充版） -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">5</span> 模型选择策略</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <p class="text-sm text-gray-400">Vibe Coding 选对模型事半功倍。以下为 2025 年主流模型，涵盖美国/中国。</p>
+                    
+                    <!-- 5.1 美国闭源 -->
+                    <div>
+                        <h4 class="font-bold text-accent mb-3 text-sm uppercase tracking-wider">美国闭源模型</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-400">
+                                <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                                    <tr>
+                                        <th class="px-4 py-3">模型</th>
+                                        <th class="px-4 py-3">出品方</th>
+                                        <th class="px-4 py-3">代码能力</th>
+                                        <th class="px-4 py-3">上下文</th>
+                                        <th class="px-4 py-3">推荐场景</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">GPT-5.3 codex</td><td class="px-4 py-3">OpenAI</td><td class="px-4 py-3">⭐⭐⭐⭐⭐</td><td class="px-4 py-3">128K+</td><td class="px-4 py-3">复杂工程、跨文件重构</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">Claude Sonnet 4.6</td><td class="px-4 py-3">Anthropic</td><td class="px-4 py-3">⭐⭐⭐⭐⭐</td><td class="px-4 py-3">200K</td><td class="px-4 py-3">Vibe Coding 首选</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">Claude 4.6 Opus</td><td class="px-4 py-3">Anthropic</td><td class="px-4 py-3">⭐⭐⭐⭐⭐</td><td class="px-4 py-3">200K</td><td class="px-4 py-3">大型代码库多文件重构</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">Gemini 3.1 Pro</td><td class="px-4 py-3">Google</td><td class="px-4 py-3">⭐⭐⭐⭐</td><td class="px-4 py-3">100万 token</td><td class="px-4 py-3">超长上下文、多模态、省预算</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">GPT-5.2</td><td class="px-4 py-3">OpenAI</td><td class="px-4 py-3">⭐⭐⭐⭐⭐</td><td class="px-4 py-3">200K</td><td class="px-4 py-3">强推理、复杂逻辑</td></tr>
+                                    <tr><td class="px-4 py-3 font-bold text-white">GPT-5.1 codex</td><td class="px-4 py-3">OpenAI</td><td class="px-4 py-3">⭐⭐⭐⭐</td><td class="px-4 py-3">128K</td><td class="px-4 py-3">通用编程、性价比</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 5.2 中国模型 -->
+                    <div>
+                        <h4 class="font-bold text-accent mb-3 text-sm uppercase tracking-wider">中国模型</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-400">
+                                <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                                    <tr>
+                                        <th class="px-4 py-3">模型</th>
+                                        <th class="px-4 py-3">出品方</th>
+                                        <th class="px-4 py-3">代码能力</th>
+                                        <th class="px-4 py-3">上下文</th>
+                                        <th class="px-4 py-3">推荐场景</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">GLM-5</td><td class="px-4 py-3">智谱 AI</td><td class="px-4 py-3">⭐⭐⭐⭐⭐</td><td class="px-4 py-3">128K</td><td class="px-4 py-3">国产首选、Web 前端、性价比高</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">通义千问 Qwen-3.5</td><td class="px-4 py-3">阿里</td><td class="px-4 py-3">⭐⭐⭐⭐</td><td class="px-4 py-3">128K+</td><td class="px-4 py-3">通义灵码、中文友好</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">Kimi K2.5</td><td class="px-4 py-3">月之暗面</td><td class="px-4 py-3">⭐⭐⭐⭐</td><td class="px-4 py-3">超长</td><td class="px-4 py-3">长文档、搜索增强</td></tr>
+                                    <tr class="border-b border-gray-700"><td class="px-4 py-3 font-bold text-white">minimax M2.5</td><td class="px-4 py-3">MiniMax</td><td class="px-4 py-3">⭐⭐⭐⭐</td><td class="px-4 py-3">128K</td><td class="px-4 py-3">多模态、语音交互</td></tr>
+                                    <tr><td class="px-4 py-3 font-bold text-white">DeepSeek</td><td class="px-4 py-3">DeepSeek</td><td class="px-4 py-3">⭐⭐⭐⭐⭐</td><td class="px-4 py-3">128K</td><td class="px-4 py-3">推理强、成本极低、开源</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 5.3 选型决策树 -->
+                    <div class="border-t border-gray-700 pt-6">
+                        <h4 class="font-bold text-white mb-3">选型决策树</h4>
+                        <div class="grid md:grid-cols-2 gap-6 text-sm">
+                            <div class="bg-gray-900/50 p-4 rounded-lg">
+                                <div class="font-bold text-accent mb-2">按场景</div>
+                                <ul class="space-y-1 text-gray-400">
+                                    <li>写前端/全栈 → <span class="text-white">Claude Sonnet 4.6 / GLM-5</span></li>
+                                    <li>极致推理/逻辑 → <span class="text-white">GPT-5.2 / DeepSeek</span></li>
+                                    <li>超长上下文 → <span class="text-white">Gemini 3.1 Pro</span></li>
+                                    <li>省钱/免费 → <span class="text-white">DeepSeek / Gemini 免费版</span></li>
+                                    <li>国内环境 → <span class="text-white">DeepSeek / GLM-5 / 通义 / Kimi</span></li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-900/50 p-4 rounded-lg">
+                                <div class="font-bold text-accent mb-2">混用策略</div>
+                                <ul class="space-y-1 text-gray-400">
+                                    <li>规划阶段 → 推理强（GPT-5.2 / DeepSeek / Gemini 3.1）</li>
+                                    <li>编码阶段 → 代码强（Claude Sonnet 4.6 / GLM-5）</li>
+                                    <li>Review 阶段 → 不同模型交叉审查</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. MCP (Model Context Protocol) 详解 -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">6</span> MCP (Model Context Protocol)</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <!-- 6.1 概念 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">6.1 什么是 MCP？</h4>
+                        <p class="text-sm text-gray-400 mb-3">
+                            MCP 是<strong class="text-white">模型上下文协议</strong>，由 Anthropic 等推动的开放协议，让大模型与外部数据源、工具建立标准化通信。可类比为：<strong class="text-accent">AI 连接外部世界的「USB 接口」</strong>。
+                        </p>
+                        <div class="bg-gray-900 p-4 rounded-lg font-mono text-xs text-green-400 mb-3">
+                            宿主(IDE) ←→ MCP Client ←→ MCP Server ←→ 外部服务(GitHub/DB/浏览器...)
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
+                                <div class="text-accent font-bold text-sm mb-1">Prompts</div>
+                                <div class="text-xs text-gray-400">结构化提示模板，参数化复用</div>
+                            </div>
+                            <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
+                                <div class="text-accent font-bold text-sm mb-1">Resources</div>
+                                <div class="text-xs text-gray-400">结构化数据（文件、API），URI 标识</div>
+                            </div>
+                            <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
+                                <div class="text-accent font-bold text-sm mb-1">Tools</div>
+                                <div class="text-xs text-gray-400">可被 LLM 发现和调用的外部工具</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 6.2 应用方法 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">6.2 如何配置 MCP？</h4>
+                        <p class="text-sm text-gray-400 mb-3">在 Cursor / Claude Desktop 的配置文件中添加 MCP Server。以 Cursor 为例，编辑 <code class="bg-gray-800 px-1 rounded">~/.cursor/mcp.json</code>：</p>
+                        <div class="code-block text-xs mb-3">
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"]
+    }
+  }
+}
+                        </div>
+                        <p class="text-xs text-gray-400">配置后重启 IDE，Agent 即可自动发现并调用这些工具。</p>
+                    </div>
+                    <!-- 6.3 案例 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">6.3 使用案例</h4>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-accent pl-4">
+                                <div class="font-bold text-accent mb-2">案例 1：Playwright MCP — 浏览器自动化</div>
+                                <p class="text-sm text-gray-400 mb-2">Microsoft 官方提供，让 AI 控制真实浏览器。基于无障碍快照（非截图），轻量且可靠。</p>
+                                <div class="text-xs text-gray-300 mb-2"><strong>应用场景：</strong>生成 Playwright 测试代码、自动化填表、网页内容爬取、探索网站结构</div>
+                                <div class="code-block text-xs">
+Prompt: "请用 Playwright 打开 https://example.com，截图首页，并提取页面中所有链接的文本和 URL，输出为 JSON。"
+                                </div>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <div class="font-bold text-green-400 mb-2">案例 2：GitHub MCP — 仓库与协作自动化</div>
+                                <p class="text-sm text-gray-400 mb-2">GitHub 官方 MCP Server，让 AI 管理仓库、Issue、PR、读取远程代码。</p>
+                                <div class="text-xs text-gray-300 mb-2"><strong>应用场景：</strong>创建 PR、搜索 Issue、分析仓库结构、生成 Release Notes</div>
+                                <div class="code-block text-xs">
+Prompt: "请用 GitHub MCP 读取仓库 facebook/react 的 README 和 package.json，总结该项目的技术栈和主要依赖，并给出一个适合贡献者的入门建议。"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <h4 class="font-bold text-gray-300 mb-2 text-sm">常用 MCP Server 推荐</h4>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-1 bg-gray-700 rounded">@playwright/mcp</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">@modelcontextprotocol/server-github</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">filesystem</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">fetch</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded">postgres</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Skill 系统详解 -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">7</span> Skill 系统</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <!-- 7.1 概念 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">7.1 什么是 Skill？</h4>
+                        <p class="text-sm text-gray-400 mb-3">
+                            Skill = <strong class="text-white">预编写的指令集 + 资源包</strong>，教 AI「如何做某类特定任务」。类比：<strong class="text-accent">MCP 是工具箱，Skill 是操作手册（SOP）</strong>。
+                        </p>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <div class="text-xs font-bold text-accent mb-2">典型 Skill 文件结构</div>
+                            <pre class="text-xs text-gray-300 font-mono">
+.skills/
+└── ui-design/
+    ├── SKILL.md          # 核心指令（必须）
+    ├── scripts/          # 辅助脚本
+    ├── examples/         # 参考设计截图
+    └── resources/        # 色板、字体、模板
+                            </pre>
+                        </div>
+                    </div>
+                    <!-- 7.2 应用方法 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">7.2 应用方法</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-start gap-2"><span class="text-accent">1.</span> 在项目根目录创建 <code class="bg-gray-800 px-1 rounded">.skills/&lt;skill-name&gt;/SKILL.md</code></li>
+                            <li class="flex items-start gap-2"><span class="text-accent">2.</span> 在 SKILL.md 中写明：身份、能力、约束、输出格式、示例</li>
+                            <li class="flex items-start gap-2"><span class="text-accent">3.</span> 在 Cursor/Trae 中用 <code class="bg-gray-800 px-1 rounded">@skill</code> 或 <code class="bg-gray-800 px-1 rounded">@.skills/skill-name</code> 引用</li>
+                            <li class="flex items-start gap-2"><span class="text-accent">4.</span> Prompt 中直接描述任务，AI 会按 Skill 规范执行</li>
+                        </ul>
+                    </div>
+                    <!-- 7.3 案例 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-white">7.3 使用案例</h4>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-accent pl-4">
+                                <div class="font-bold text-accent mb-2">案例 1：Code Review Skill — 团队代码审查规范</div>
+                                <p class="text-sm text-gray-400 mb-2">统一团队代码风格和审查标准，让 AI 按规范自动审查。</p>
+                                <div class="text-xs text-gray-300 mb-2"><strong>SKILL.md 核心内容：</strong></div>
+                                <div class="code-block text-xs mb-2">
+你是一位严格的代码审查员。审查时请检查：
+1. 命名：变量/函数用 camelCase，组件用 PascalCase
+2. 错误处理：异步操作必须有 try-catch
+3. 安全：禁止硬编码密钥，禁止 eval
+4. 输出：按「问题 / 建议 / 严重程度」结构化输出
+                                </div>
+                                <div class="text-xs text-gray-400">使用：<code class="bg-gray-800 px-1 rounded">@.skills/code-review</code> "请审查 src/utils/ 下的所有文件"</div>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <div class="font-bold text-green-400 mb-2">案例 2：Dark Mode UI Skill — 深色主题设计规范</div>
+                                <p class="text-sm text-gray-400 mb-2">让 AI 按设计规范生成一致的深色主题界面。</p>
+                                <div class="text-xs text-gray-300 mb-2"><strong>SKILL.md 核心内容：</strong></div>
+                                <div class="code-block text-xs mb-2">
+生成深色主题 UI 时遵循：
+- 背景：#0f172a / #1e293b
+- 主色：#38bdf8（accent）
+- 强调色：#f43f5e（highlight）
+- 字体：Inter + JetBrains Mono
+- 圆角：border-radius 0.5rem
+- 组件：glass-card 风格（毛玻璃、细边框）
+                                </div>
+                                <div class="text-xs text-gray-400">使用：<code class="bg-gray-800 px-1 rounded">@.skills/dark-mode-ui</code> "做一个设置页面的深色主题"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="relative py-4 text-center">
+            <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-700"></div>
+            </div>
+            <span class="relative bg-[#0f172a] px-4 text-gray-500 font-mono text-sm">🍱 午餐休息 (12:00-14:00)</span>
+        </div>
+
+        <section id="afternoon">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">🌆</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">下午场：实战篇</h2>
+                    <p class="text-accent">从 0 到 1 做一个产品（14:00-17:00）</p>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <div class="glass-card p-4 rounded-xl flex flex-wrap gap-4 items-center justify-between bg-green-900/10 border-green-500/20">
+                    <div class="font-bold text-green-400">环境准备 Check</div>
+                    <div class="flex gap-4 text-sm">
+                        <label class="flex items-center"><input type="checkbox" checked disabled class="mr-2"> Cursor / Trae</label>
+                        <label class="flex items-center"><input type="checkbox" checked disabled class="mr-2"> Node.js</label>
+                        <label class="flex items-center"><input type="checkbox" checked disabled class="mr-2"> GitHub Account</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 实战 Level 1：习惯打卡器 -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center mr-3 text-sm">9</span> 实战 Level 1：习惯打卡器</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-white mb-2">任务：开发一个每日习惯打卡应用</h4>
+                            <p class="text-sm text-gray-400">涉及<strong class="text-white">日期处理、localStorage、统计计算、进度条 UI</strong>。</p>
+                        </div>
+                        <span class="px-2 py-1 bg-amber-600/30 text-amber-300 text-xs rounded">约 40 分钟</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">核心需求</span>
+                            <ul class="text-sm text-gray-300 mt-2 space-y-1 list-disc list-inside">
+                                <li>预设 3–5 个习惯（如早起、运动、阅读），可自定义</li>
+                                <li>每日点击打卡，已打卡显示勾选状态</li>
+                                <li>本周完成率统计，进度条展示</li>
+                                <li>数据存 localStorage，刷新不丢失</li>
+                                <li>深色主题，界面简洁</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">指引 1：先定义数据结构</span>
+                            <div class="code-block mt-2 text-xs">
+"我要做一个习惯打卡器。请先设计：如何存储习惯列表？如何存储每日打卡记录（日期+习惯ID）？
+给出数据结构（如 JSON 格式）和文件结构，不要写代码。"
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">指引 2：Agent 分步实现</span>
+                            <div class="code-block mt-2 text-xs">
+"按上面的方案实现。先做 HTML+CSS 骨架和习惯列表，再做打卡逻辑和 localStorage，最后加本周统计和进度条。"
+                            </div>
+                        </div>
+                        <div class="bg-blue-900/20 border border-blue-700/30 p-3 rounded text-sm text-blue-200">
+                            <strong>💡 卡住时：</strong> 直接贴「当前代码 + 报错信息」给 AI，或问「如何用 JavaScript 获取本周的日期范围？」
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 实战 Level 2：AI 产品落地页 -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-highlight to-transparent rounded-l"></div>
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white">
+                    <span class="w-8 h-8 rounded-full bg-highlight text-white flex items-center justify-center mr-3 text-sm">10</span> 
+                    实战 Level 2：AI 产品落地页 <span class="ml-2 px-2 py-0.5 bg-highlight text-white text-xs rounded">⭐ 核心实战</span>
+                </h3>
+                
+                <div class="glass-card p-6 rounded-xl border-highlight/30">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div>
+                            <h4 class="text-lg font-bold text-white mb-2">任务：为假想 AI 产品做一个完整落地页</h4>
+                            <p class="text-sm text-gray-400">比作品集更真实：<strong class="text-white">Hero、功能展示、定价、FAQ、CTA</strong>，可部署上线。</p>
+                        </div>
+                        <span class="px-2 py-1 bg-amber-600/30 text-amber-300 text-xs rounded">约 60 分钟</span>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">核心模块</span>
+                            <div class="grid md:grid-cols-2 gap-3 mt-2">
+                                <div class="bg-gray-800/50 p-3 rounded-lg">Hero：产品名 + 一句话价值主张 + CTA</div>
+                                <div class="bg-gray-800/50 p-3 rounded-lg">功能展示：3–4 个功能卡片，图标+标题+描述</div>
+                                <div class="bg-gray-800/50 p-3 rounded-lg">定价：免费/Pro 对比，或单一定价</div>
+                                <div class="bg-gray-800/50 p-3 rounded-lg">FAQ：手风琴或折叠，3–5 个问题</div>
+                                <div class="bg-gray-800/50 p-3 rounded-lg col-span-2">Footer：联系、版权、社交链接</div>
+                            </div>
+                        </div>
+
+                        <div class="border-l-2 border-gray-600 pl-4">
+                            <h5 class="font-bold text-white text-sm">阶段 1：写 Spec，让 Agent 规划 (5 min)</h5>
+                            <div class="code-block mt-2 text-xs">
+"我要做一个 AI 写作助手的落地页。包含：Hero、4 个功能卡片、定价表、FAQ、Footer。
+请先给出页面结构（section 划分）和文件组织，不要写代码。"
+                            </div>
+                        </div>
+
+                        <div class="border-l-2 border-accent pl-4">
+                            <h5 class="font-bold text-white text-sm">阶段 2：Sub-Agent 分步执行 (35 min)</h5>
+                            <ul class="text-sm text-gray-300 mt-2 space-y-2">
+                                <li>🤖 <strong>Sub-Agent A:</strong> HTML 骨架 + 各 section 占位</li>
+                                <li>🎨 <strong>Sub-Agent B:</strong> Tailwind/CSS 样式，响应式断点</li>
+                                <li>⚡ <strong>Sub-Agent C:</strong> FAQ 折叠、导航锚点、平滑滚动</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-2">每步完成后审查 diff，必要时用 Cmd+K 微调。</p>
+                        </div>
+
+                        <div class="border-l-2 border-green-500 pl-4">
+                            <h5 class="font-bold text-white text-sm">阶段 3：部署 (10 min)</h5>
+                            <div class="code-block text-xs">"生成 Vercel 部署配置，并告诉我如何一键部署。"</div>
+                        </div>
+                        <div class="bg-yellow-900/20 border border-yellow-700/30 p-4 rounded text-sm text-yellow-200">
+                            <strong>💡 教练点评：</strong> 你的角色是 <strong>产品经理 + 架构师 + 验收官</strong>。AI 写代码，你负责「要什么」和「对不对」。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 高级技巧与疑难杂症 -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center mr-3 text-sm">11</span> 高级技巧与疑难杂症</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-red-300 mb-2">🐛 当 AI 写出 Bug？</h4>
+                        <p class="text-sm text-gray-400 mb-2">场景：按钮点击没反应、页面白屏、数据不保存等。</p>
+                        <div class="code-block text-xs mb-2">
+"点击提交按钮没有反应，帮我 debug。这是浏览器控制台的报错：[粘贴报错]"
+                        </div>
+                        <p class="text-xs text-gray-500">→ 直接贴报错 + 相关代码片段，Agent 会自动定位并修复。不要只说「有问题」。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-yellow-300 mb-2">📚 上下文窗口溢出？</h4>
+                        <p class="text-sm text-gray-400 mb-2">症状：AI 开始「忘记」之前说的、重复生成旧代码、答非所问。</p>
+                        <ul class="text-sm text-gray-400 space-y-1 list-disc list-inside">
+                            <li>开新 Chat/Agent 会话，不要硬撑</li>
+                            <li>把关键信息（Spec、架构图）重新粘贴</li>
+                            <li>用 <code class="bg-gray-800 px-1 rounded">@file</code> 引用具体文件，别让 AI 猜</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-blue-300 mb-2">🎯 AI 理解错意图？</h4>
+                        <p class="text-sm text-gray-400 mb-2">策略：更具体、给参考、给反面。</p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li><strong class="text-white">更具体：</strong>「不是整个页面居中，是标题文字居中」</li>
+                            <li><strong class="text-white">给参考：</strong>拖入一张你想要的设计截图</li>
+                            <li><strong class="text-white">反面例子：</strong>「不要用弹窗，用页面内嵌的方式」</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-green-300 mb-2">🔧 MCP + Agent 实战组合</h4>
+                        <div class="grid md:grid-cols-3 gap-3 text-sm">
+                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                <div class="text-accent text-xs mb-1">filesystem</div>
+                                <div class="text-gray-400 text-xs">让 Agent 读取设计稿、配置文件</div>
+                            </div>
+                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                <div class="text-accent text-xs mb-1">fetch</div>
+                                <div class="text-gray-400 text-xs">查 API 文档、获取网页内容</div>
+                            </div>
+                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                <div class="text-accent text-xs mb-1">Playwright</div>
+                                <div class="text-gray-400 text-xs">自动截图、检查页面效果</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <p class="text-sm font-bold text-gray-300 mb-2">💡 心法</p>
+                        <p class="text-xs text-gray-400">不懂的代码不要盲目 Accept —— 问 AI 解释清楚再接受。每次生成必看 Diff。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 成果展示 -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-3 text-sm">12</span> 成果展示与评价</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-3">展示形式</h4>
+                        <p class="text-sm text-gray-400 mb-3">每组 3 分钟：演示项目 + 简述过程 + 1 个踩坑或收获。</p>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li>展示：习惯打卡器 / AI 产品落地页（或两者）</li>
+                            <li>简述：用了哪些 Prompt、Agent 如何拆任务</li>
+                            <li>踩坑：遇到什么问题、如何解决</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-3">评价维度</h4>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                                <div class="font-bold text-accent mb-2">产品完成度</div>
+                                <ul class="text-xs text-gray-400 space-y-1">
+                                    <li>功能是否可用？</li>
+                                    <li>有无明显 Bug？</li>
+                                    <li>是否可部署上线？</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                                <div class="font-bold text-accent mb-2">设计美观度</div>
+                                <ul class="text-xs text-gray-400 space-y-1">
+                                    <li>UI 是否统一？</li>
+                                    <li>响应式是否到位？</li>
+                                    <li>交互是否流畅？</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                                <div class="font-bold text-accent mb-2">AI 利用率</div>
+                                <ul class="text-xs text-gray-400 space-y-1">
+                                    <li>是否用 Agent 模式？</li>
+                                    <li>是否先规划再执行？</li>
+                                    <li>是否用 MCP/Skill？</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <h4 class="font-bold text-white mb-2">开放 Q&A</h4>
+                        <p class="text-sm text-gray-400">自由提问。可讨论：Vibe Coding 的局限性、与低代码的边界、未来趋势。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center mr-3 text-sm">13</span> 总结与展望</h3>
+                <div class="glass-card p-8 rounded-xl text-center">
+                    <p class="text-xl font-serif italic text-white mb-4">
+                        "未来的竞争力不在于你能写多少行代码，<br>而在于你能多清晰地表达你想要什么。"
+                    </p>
+                    <p class="text-sm text-gray-400">今日收获：理解 Vibe Coding 本质 · 掌握 Agent/MCP/Skill · 完成可上线项目</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="mt-16">
+            <h2 class="text-2xl font-bold mb-6 text-center">📊 全天课表总览</h2>
+            <div class="glass-card rounded-xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-400">
+                        <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                            <tr>
+                                <th class="px-4 py-3">时间</th>
+                                <th class="px-4 py-3">模块</th>
+                                <th class="px-4 py-3">内容</th>
+                                <th class="px-4 py-3">形式</th>
+                                <th class="px-4 py-3 text-center">重要度</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">09:00-09:30</td>
+                                <td class="px-4 py-3">开场引入</td>
+                                <td class="px-4 py-3">AI 使用现状、编程重新定义、Karpathy 演讲</td>
+                                <td class="px-4 py-3">讲座</td>
+                                <td class="px-4 py-3 text-center text-blue-400">🔵🔵</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">09:30-10:00</td>
+                                <td class="px-4 py-3">Vibe Coding 解析</td>
+                                <td class="px-4 py-3">概念、误区、五大技巧</td>
+                                <td class="px-4 py-3">讲座+讨论</td>
+                                <td class="px-4 py-3 text-center text-blue-400">🔵🔵</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">10:00-10:15</td>
+                                <td class="px-4 py-3">AI IDE 工具全景</td>
+                                <td class="px-4 py-3">美国/中国模型、Trae Agent 介绍</td>
+                                <td class="px-4 py-3">讲座+演示</td>
+                                <td class="px-4 py-3 text-center text-blue-400">🔵🔵</td>
+                            </tr>
+                            <tr class="bg-gray-800/30">
+                                <td class="px-4 py-3 text-white font-bold font-mono text-xs">10:15-11:00</td>
+                                <td class="px-4 py-3 font-bold text-accent">Agent & Sub-Agent</td>
+                                <td class="px-4 py-3">ReAct、工具库、Sub-Agent、各 IDE 实现、最佳实践</td>
+                                <td class="px-4 py-3">深度讲解</td>
+                                <td class="px-4 py-3 text-center text-red-500">🔴🔴🔴</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">11:00-11:25</td>
+                                <td class="px-4 py-3">模型选择策略</td>
+                                <td class="px-4 py-3">美国/中国模型、选型决策树</td>
+                                <td class="px-4 py-3">讲座</td>
+                                <td class="px-4 py-3 text-center text-blue-400">🔵🔵</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">11:25-11:50</td>
+                                <td class="px-4 py-3">MCP + Skill</td>
+                                <td class="px-4 py-3">概念、配置、Playwright/GitHub 案例、Skill 案例</td>
+                                <td class="px-4 py-3">讲座+演示</td>
+                                <td class="px-4 py-3 text-center text-blue-400">🔵🔵</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">11:50-12:00</td>
+                                <td class="px-4 py-3">Skill 系统</td>
+                                <td class="px-4 py-3">Code Review、Dark Mode UI 案例</td>
+                                <td class="px-4 py-3">讲座</td>
+                                <td class="px-4 py-3 text-center text-blue-400">🔵</td>
+                            </tr>
+                            <tr class="bg-gray-900/50">
+                                <td class="px-4 py-3 text-gray-500 font-mono text-xs">12:00-14:00</td>
+                                <td class="px-4 py-3">午餐休息</td>
+                                <td class="px-4 py-3">—</td>
+                                <td class="px-4 py-3">—</td>
+                                <td class="px-4 py-3 text-center">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">14:00-14:20</td>
+                                <td class="px-4 py-3">环境准备</td>
+                                <td class="px-4 py-3">Cursor/Trae、Node.js、GitHub 检查</td>
+                                <td class="px-4 py-3">实操</td>
+                                <td class="px-4 py-3 text-center text-green-400">🟢</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">14:20-15:00</td>
+                                <td class="px-4 py-3">实战 Level 1</td>
+                                <td class="px-4 py-3">习惯打卡器（数据结构、localStorage、进度条）</td>
+                                <td class="px-4 py-3">动手实战</td>
+                                <td class="px-4 py-3 text-center text-red-400">🔴🔴</td>
+                            </tr>
+                            <tr class="bg-gray-800/30">
+                                <td class="px-4 py-3 text-white font-bold font-mono text-xs">15:00-16:00</td>
+                                <td class="px-4 py-3 font-bold text-accent">实战 Level 2</td>
+                                <td class="px-4 py-3">AI 产品落地页（Hero、功能、定价、FAQ、部署）</td>
+                                <td class="px-4 py-3">核心实战</td>
+                                <td class="px-4 py-3 text-center text-red-500">🔴🔴🔴</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">16:00-16:20</td>
+                                <td class="px-4 py-3">高级技巧与疑难杂症</td>
+                                <td class="px-4 py-3">Bug 调试、上下文溢出、意图纠偏、MCP 组合</td>
+                                <td class="px-4 py-3">讲座+讨论</td>
+                                <td class="px-4 py-3 text-center text-blue-400">🔵🔵</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">16:20-16:40</td>
+                                <td class="px-4 py-3">成果展示与评价</td>
+                                <td class="px-4 py-3">每组 3 分钟展示、评价维度、开放 Q&A</td>
+                                <td class="px-4 py-3">展示+答疑</td>
+                                <td class="px-4 py-3 text-center text-green-400">🟢🟢</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-white font-mono text-xs">16:40-17:00</td>
+                                <td class="px-4 py-3">总结与展望</td>
+                                <td class="px-4 py-3">今日收获、一句话 Takeaway</td>
+                                <td class="px-4 py-3">讲座</td>
+                                <td class="px-4 py-3 text-center text-blue-400">🔵</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 border-t border-gray-700 text-xs text-gray-500">
+                    <strong class="text-gray-400">整体逻辑：</strong>上午搭认知框架（概念→工具→Agent→模型→MCP/Skill），下午动手出成果（习惯打卡器→AI 落地页→技巧→展示→总结）。核心亮点是 Agent & Sub-Agent 和实战 Level 2。
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20 border-t border-gray-800 py-10 text-center text-gray-500 text-sm">
+        <p>Vibe Coding Bootcamp 2025</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
+            <a href="https://cursor.sh/" target="_blank" rel="noopener" class="hover:text-accent">Cursor.sh</a>
+            <a href="https://trae.ai/" target="_blank" rel="noopener" class="hover:text-accent">Trae.ai</a>
+            <a href="#trae-agent" class="hover:text-accent">Trae Agent 介绍</a>
+            <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener" class="hover:text-accent">MCP</a>
+            <a href="#top" class="hover:text-accent">返回顶部</a>
+        </div>
+    </footer>
+
+</body>
+</html>

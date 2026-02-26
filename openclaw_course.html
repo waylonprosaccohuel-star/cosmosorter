@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw 深度课程 | 个人 AI 助手从入门到部署</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { dark: '#0f172a', card: '#1e293b', accent: '#38bdf8', highlight: '#f43f5e', lobster: '#FF4500' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .code-block { background-color: #000; border-radius: 0.5rem; padding: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #a5b4fc; overflow-x: auto; }
+        .openclaw-accent { border-left: 4px solid #FF4500; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white pb-20" id="top">
+
+    <header class="relative overflow-hidden py-16 px-6 text-center border-b border-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-accent font-mono text-sm tracking-widest mb-2 block">OpenClaw 专属课程</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="text-lobster">🦞 OpenClaw</span> 深度课程
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 font-light">
+                "个人 AI 助手 · Any OS · Any Platform · The lobster way"<br>
+                <span class="text-base text-gray-500">从入门到部署，掌握你的专属 AI 助手</span>
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-mono text-gray-300">
+                <div class="px-4 py-2 bg-card rounded-lg border border-gray-700">🕒 全天课程 (7–8 小时)</div>
+                <div class="px-4 py-2 bg-card rounded-lg border border-gray-700">👥 适合人群：想部署个人 AI 助手、接入多渠道的开发者</div>
+                <div class="px-4 py-2 bg-lobster/20 border border-lobster/40 rounded-lg">
+                    <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="text-lobster">🦞 OpenClaw</a> ·
+                    <a href="https://github.com/openclaw/clawhub" target="_blank" rel="noopener" class="text-lobster">ClawHub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- OpenClaw 崛起历史 -->
+    <section class="max-w-5xl mx-auto px-6 mt-8">
+        <div class="glass-card p-6 rounded-xl border-l-4 border-lobster">
+            <h2 class="text-lg font-bold text-white mb-4">📖 OpenClaw 崛起历史</h2>
+            <div class="space-y-4 text-sm text-gray-400">
+                <p>
+                    <strong class="text-white">OpenClaw</strong> 由奥地利开发者 <strong class="text-accent">Peter Steinberger</strong> 创建，
+                    最初名为 <strong class="text-white">Clawdbot</strong>（Clawd + bot），致敬 Anthropic 的 Claude。
+                    它是一个能执行真实任务的自主 Agent：订机票、管理邮件、运行终端命令、控制智能家居，通过 WhatsApp、Telegram、Discord、Slack 等渠道与你对话。
+                </p>
+                <p>
+                    <strong class="text-lobster">2026 年 1 月</strong>，项目爆发式增长：YouTube 创作者搭建 24/7 运行环境；主流媒体称其为「个人 AI 助手的未来」；
+                    投资人 Chamath Palihapitiya、OpenAI 联合创始人 Andrej Karpathy 公开背书。GitHub Star 从 3 万飙升至 10 万+。
+                </p>
+                <p>
+                    <strong class="text-lobster">2026 年 1 月 27 日</strong>：Anthropic 发出商标请求，Clawdbot 被迫更名。龙虾会做的事——<strong class="text-white">蜕壳（molt）</strong>。
+                    社区在 Discord 凌晨 5 点聚集，数百个名字被提议：Shelldon、Pinchy、Thermidor、Crusty、Lobstar 等。最终，<strong class="text-white">Molty</strong> 诞生，住在 <strong class="text-white">Moltbot</strong> 里。
+                </p>
+                <p>
+                    <strong class="text-lobster">2026 年 1 月 30 日</strong>：Moltbot 这个名字「never quite rolled off the tongue」，于是再次蜕壳——<strong class="text-white">OpenClaw</strong> 诞生。
+                    3 小时内完成迁移：文档迁至 docs.openclaw.ai、npm 包发布、GitHub 更名、@openclaw 金 V 认证。社区名言：<em class="text-accent">"The claw is the law" 🤠</em>
+                </p>
+                <p>
+                    <strong class="text-white">OpenClaw = OPEN + CLAW</strong>：开源、对所有人开放；龙虾 heritage；你的助手、你的机器、你的规则。🦞
+                </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-700 flex flex-wrap gap-2 text-xs">
+                <a href="https://docs.openclaw.ai/start/lore" target="_blank" rel="noopener" class="text-accent hover:underline">官方 Lore 文档</a>
+                <span class="text-gray-600">•</span>
+                <a href="https://www.codercops.com/blog/clawdbot-moltbot-openclaw-viral-saga-2026" target="_blank" rel="noopener" class="text-accent hover:underline">Clawdbot → Moltbot → OpenClaw 全记录</a>
+            </div>
+        </div>
+    </section>
+
+    <nav class="max-w-5xl mx-auto px-6 mt-6 sticky top-0 z-10 bg-dark/95 backdrop-blur py-2 border-b border-gray-800">
+        <div class="flex flex-wrap gap-2 text-xs">
+            <a href="#openclaw" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">OpenClaw 详解</a>
+            <a href="#examples" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">应用案例</a>
+            <a href="#clawhub" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">ClawHub 详解</a>
+            <a href="#feishu" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">飞书接入</a>
+            <a href="#afternoon" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">实战篇</a>
+            <a href="#collab" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600">人机协作磨合</a>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 mt-10 space-y-16">
+
+        <!-- ========== OpenClaw 详解 ========== -->
+        <section id="openclaw" class="openclaw-accent scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">🦞</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">OpenClaw 详解</h2>
+                    <p class="text-lobster">个人 AI 助手 · Any OS · Any Platform · The lobster way</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">1</span> 什么是 OpenClaw？</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <p class="text-gray-400">
+                        <strong class="text-white">OpenClaw</strong> 是 <strong class="text-lobster">个人 AI 助手</strong>，运行在你自己的设备上。
+                        它在你已有的渠道上回答你：WhatsApp、Telegram、Slack、Discord、Google Chat、Signal、iMessage、Microsoft Teams、WebChat 等，
+                        还支持 BlueBubbles、Matrix、Zalo、Zalo Personal 等扩展渠道。
+                    </p>
+                    <p class="text-gray-400">
+                        <strong class="text-accent">Gateway 是控制平面</strong>——产品本身是助手。如果你想要一个本地、快速、始终在线的个人 AI 助手，OpenClaw 就是为此而生。
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <div class="text-xs font-bold text-accent mb-2">官方推荐</div>
+                            <p class="text-sm text-gray-400">在终端运行 <code class="text-lobster">openclaw onboard</code> 向导，按步骤引导你完成 Gateway、工作区、渠道和 Skills 的配置。</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <div class="text-xs font-bold text-accent mb-2">模型推荐</div>
+                            <p class="text-sm text-gray-400">官方推荐 <strong class="text-white">Anthropic Pro/Max (100/200) + Opus 4.6</strong>，长上下文能力强、抗 prompt 注入更好。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">2</span> 核心架构</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <p class="text-sm text-gray-400">
+                        多渠道（WhatsApp、Telegram、Slack 等）→ <strong class="text-white">Gateway</strong> 控制平面 → 你的 AI 助手。Gateway 管理会话、渠道、工具；你通过 WebChat、CLI、iOS/Android 与助手对话。
+                    </p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">3</span> 核心能力一览</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-sm text-gray-400 mb-4">多渠道收件箱、多 Agent 路由、语音唤醒、Live Canvas 可视化工作区、丰富工具生态、ClawHub Skills 平台。详见 <a href="https://docs.openclaw.ai" target="_blank" rel="noopener" class="text-accent hover:underline">官方文档</a>。</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">4</span> 安装与快速开始</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <p class="text-sm text-gray-400">运行环境：<strong class="text-white">Node ≥22</strong></p>
+                    <div class="code-block text-xs">
+# 安装
+npm install -g openclaw@latest
+# 或: pnpm add -g openclaw@latest
+
+# 向导安装（推荐）
+openclaw onboard --install-daemon
+
+# 启动 Gateway
+openclaw gateway --port 18789 --verbose
+
+# 发送消息
+openclaw message send --to +1234567890 --message "Hello from OpenClaw"
+
+# 与助手对话（可选回传到任意已连接渠道）
+openclaw agent --message "Ship checklist" --thinking high
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">5</span> 工作区核心文档</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <p class="text-sm text-gray-400">
+                        工作区（<code class="bg-gray-800 px-1 rounded">~/.openclaw/workspace</code>）是 AI 助手的「家」。用 Markdown 定义 AI 是谁、怎么想、怎么帮你：<strong class="text-white">AGENTS.md</strong>（操作规则）、<strong class="text-white">SOUL.md</strong>（人格调性）、<strong class="text-white">IDENTITY.md</strong>（身份档案）、<strong class="text-white">USER.md</strong>（用户偏好）、<strong class="text-white">MEMORY.md</strong>（长期记忆）等。
+                    </p>
+                    <p class="text-sm text-gray-400">💡 关键心法：「写下来 > 记在脑子里」。AI 每次会话都是「醒来」，这些 .md 文件就是它的记忆。模板参考：<a href="https://docs.openclaw.ai/concepts/agent-workspace" target="_blank" rel="noopener" class="text-accent hover:underline">Agent Workspace</a></p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">6</span> 渠道</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-sm text-gray-400">支持 WhatsApp、Telegram、Slack、Discord、Signal、iMessage、BlueBubbles、Teams、Matrix、Zalo、WebChat、飞书等。各渠道需配置 token 或 webhook，详见 <a href="https://docs.openclaw.ai" target="_blank" rel="noopener" class="text-accent hover:underline">官方文档</a>。飞书接入见 <a href="#feishu" class="text-accent hover:underline">飞书章节</a>。</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">7</span> 工具与节点</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-sm text-gray-400">Browser 控制、Canvas 可视化工作区、设备节点（摄像头、录屏、通知等）、Cron 定时、Webhooks、Gmail 等。详见 <a href="https://docs.openclaw.ai" target="_blank" rel="noopener" class="text-accent hover:underline">官方文档</a>。</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">8</span> 远程访问</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-sm text-gray-400">用 <strong class="text-white">Tailscale</strong> 可以安全地远程连回家里的 OpenClaw，无需公网 IP。支持仅信任设备、公网访问等模式。</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">9</span> 安全</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-sm text-gray-400">私聊采用<strong class="text-white">配对码</strong>：对方需你本地批准才能对话。群组采用<strong class="text-white">沙箱模式</strong>隔离。建议在专用 VM 或容器中运行，使用短期 token 替代永久 API 密钥。</p>
+                </div>
+            </div>
+
+            <!-- ========== 应用案例（参考 new.md）========== -->
+            <div id="examples" class="mb-12 scroll-mt-24">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-lobster text-white flex items-center justify-center mr-3 text-sm">10</span> 应用案例：OpenClaw 能做什么？</h3>
+                <p class="text-sm text-gray-400 mb-6">以下案例来自社区实践，从入门到进阶，帮助你理解 OpenClaw 的实际应用场景。</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card p-4 rounded-xl">
+                        <h4 class="font-bold text-accent mb-2">📧 邮件与日历助手</h4>
+                        <p class="text-sm text-gray-400">读取收件箱、总结邮件、安排会议、起草回复。配合 Memory 插件，告别「AI 失忆」。</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl">
+                        <h4 class="font-bold text-accent mb-2">🍳 菜谱提取与膳食计划</h4>
+                        <p class="text-sm text-gray-400">从任意网站抓取菜谱，去掉冗长故事，只保留食材和步骤。还可根据冰箱库存生成每周膳食计划。</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl">
+                        <h4 class="font-bold text-accent mb-2">🏠 智能家居控制</h4>
+                        <p class="text-sm text-gray-400">自然语言控制全屋：「关掉楼上灯，把 thermostat 调到 68 度」。通过 Home Assistant 等中控接入，保持本地网络。</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl">
+                        <h4 class="font-bold text-accent mb-2">📝 多 Agent 内容系统</h4>
+                        <p class="text-sm text-gray-400">9 个专职 Agent 24/7 协作：研究员、写手、编辑、SEO、社交调度、数据分析……内容自动化的「圣杯」。</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl">
+                        <h4 class="font-bold text-accent mb-2">💼 业务任务自动化（ClawWork）</h4>
+                        <p class="text-sm text-gray-400">发票、报告生成、数据录入、客户跟进。相当于一位 AI 运营经理。</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl">
+                        <h4 class="font-bold text-accent mb-2">🔒 安全扫描器（OSINT 自动化）</h4>
+                        <p class="text-sm text-gray-400">结合 Kali Linux 做自动化 OSINT：子域名枚举、漏洞扫描、威胁情报聚合。</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">⚠️ 安装社区 Skill 前请务必阅读 SKILL.md，检查权限请求。2026 年 2 月 ClawHub 发现 341 个恶意 Skill，需谨慎甄别。</p>
+            </div>
+        </section>
+
+        <!-- ========== ClawHub 详解 ========== -->
+        <section id="clawhub" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">📦</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">ClawHub 详解</h2>
+                    <p class="text-accent">OpenClaw 的 Skill 目录</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">6.1</span> 什么是 ClawHub？</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <p class="text-gray-400">
+                        <strong class="text-white">ClawHub</strong> 是 OpenClaw 的 <strong class="text-accent">公开 Skill 注册表</strong>：
+                        发布、版本管理、搜索基于文本的 Agent Skills（<code class="bg-gray-800 px-1 rounded">SKILL.md</code> 及配套文件）。
+                        支持快速浏览、CLI 友好 API、审核钩子和向量搜索。
+                    </p>
+                    <p class="text-gray-400">
+                        <strong class="text-lobster">onlycrabs.ai</strong> 是 <strong class="text-white">SOUL.md 注册表</strong>：以同样方式发布和分享系统灵魂。
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://clawhub.ai" target="_blank" rel="noopener" class="px-3 py-1 bg-accent/20 rounded text-accent text-sm">clawhub.ai</a>
+                        <a href="https://onlycrabs.ai" target="_blank" rel="noopener" class="px-3 py-1 bg-accent/20 rounded text-accent text-sm">onlycrabs.ai</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">6.2</span> 能做什么？</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span> 浏览 Skills，渲染其 <code class="bg-gray-800 px-1 rounded">SKILL.md</code></li>
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span> 发布新 Skill 版本，带 changelog 和 tag（含 <code>latest</code>）</li>
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span> 浏览 Souls，渲染其 <code class="bg-gray-800 px-1 rounded">SOUL.md</code></li>
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span> 通过 Embeddings（向量索引）搜索，而非脆弱关键词</li>
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span> Star、评论；管理员/版主可审核、批准 Skills</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">6.4</span> CLI 常用命令</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div class="code-block text-xs">
+# 认证
+clawhub login
+clawhub whoami
+
+# 发现
+clawhub search ...
+clawhub explore
+
+# 管理本地安装
+clawhub install &lt;slug&gt;
+clawhub uninstall &lt;slug&gt;
+clawhub list
+clawhub update --all
+
+# 不安装即可查看
+clawhub inspect &lt;slug&gt;
+
+# 发布/同步
+clawhub publish &lt;path&gt;
+clawhub sync
+                    </div>
+                    <p class="text-xs text-gray-500">文档：<code>docs/quickstart.md</code>、<code>docs/cli.md</code></p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========== 云上 OpenClaw 接入飞书 ========== -->
+        <section id="feishu" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">📱</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">云上 OpenClaw 接入飞书</h2>
+                    <p class="text-accent">腾讯云可视化配置，极简接入飞书</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl border-l-4 border-accent mb-6">
+                <p class="text-sm text-gray-400 mb-4">
+                    云上 OpenClaw（Clawdbot）如何接入飞书？<strong class="text-white">腾讯云提供可视化配置面板</strong>，只需几步即可完成快速操作，极简接入！
+                </p>
+                <a href="https://cloud.tencent.com/developer/article/2626151" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-lg text-accent hover:bg-accent/30 transition">
+                    📖 阅读完整教程：玩转 OpenClaw｜云上 OpenClaw(Clawdbot) 快速接入飞书指南
+                </a>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center mr-3 text-sm">1</span> 前置准备工作</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-sm text-gray-400 mb-4">确保已有腾讯云轻量应用服务器（Lighthouse）上部署的 OpenClaw / Clawdbot 实例，并完成基础配置。</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center mr-3 text-sm">2</span> 接入飞书步骤</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-2">创建飞书企业自建应用</h4>
+                        <p class="text-sm text-gray-400">在飞书开放平台创建企业自建应用，添加机器人，查询 AppID 和 AppSecret。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">为 OpenClaw 配置模型和通道</h4>
+                        <p class="text-sm text-gray-400">在腾讯云可视化配置面板中，将飞书应用的 AppID、AppSecret 等信息配置到 OpenClaw 的通道设置中。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">飞书机器人相关配置</h4>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li><strong class="text-white">事件配置</strong>：添加所需事件订阅</li>
+                            <li><strong class="text-white">回调配置</strong>：配置请求 URL，指向 OpenClaw Gateway</li>
+                            <li><strong class="text-white">权限配置</strong>：开通消息收发等必要权限</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">创建版本并发布</h4>
+                        <p class="text-sm text-gray-400">在飞书开放平台创建应用版本并发布，完成审核后即可与飞书机器人进行交互。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">支持的消息类型</h4>
+                        <p class="text-sm text-gray-400">飞书支持文本、富文本、图片等多种消息类型，OpenClaw 可根据配置处理相应消息。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl bg-accent/5 border border-accent/20">
+                <p class="text-sm text-gray-400">
+                    <strong class="text-accent">完整图文教程</strong>请访问：
+                    <a href="https://cloud.tencent.com/developer/article/2626151" target="_blank" rel="noopener" class="text-accent hover:underline">腾讯云开发者社区 · 玩转 OpenClaw｜云上 OpenClaw(Clawdbot) 快速接入飞书指南</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- ========== 实战篇 ========== -->
+        <section id="afternoon">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">🌆</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">实战篇</h2>
+                    <p class="text-accent">动手配置与部署 OpenClaw</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center mr-3 text-sm">1</span> 实战：本地安装与首次运行</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-sm text-gray-400 mb-4">按 OpenClaw 安装步骤，完成 <code class="bg-gray-800 px-1 rounded">openclaw onboard</code> 向导，启动 Gateway，通过 WebChat 或 CLI 与助手对话。</p>
+                    <div class="code-block text-xs">
+openclaw onboard --install-daemon
+openclaw gateway --port 18789 --verbose
+openclaw agent --message "Hello, 介绍一下你自己" --thinking high
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center mr-3 text-sm">2</span> 实战：配置第一个渠道</h3>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-sm text-gray-400 mb-4">选择 Telegram 或 WebChat 作为首个渠道，完成 token 配置与 allowFrom 白名单，验证消息收发。</p>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center mr-3 text-sm">3</span> 总结与展望</h3>
+                <div class="glass-card p-8 rounded-xl text-center">
+                    <p class="text-xl font-serif italic text-white mb-4">
+                        "New shell, same lobster."<br>
+                        <span class="text-sm not-italic text-gray-500">— Molty, after the great molt of 2026</span>
+                    </p>
+                    <p class="text-sm text-gray-400">今日收获：了解 OpenClaw 历史 · 掌握架构与安装 · 掌握 ClawHub · 飞书接入 · 完成本地/云上部署</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 人机协作磨合指引 ========== -->
+        <section id="collab" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">🤝</span>
+                <div>
+                    <h2 class="text-3xl font-bold text-white">人机协作磨合指引</h2>
+                    <p class="text-accent">如何配置更强大的个人 AI 助手</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl border-l-4 border-accent mb-8">
+                <h3 class="text-lg font-bold text-white mb-4">💡 核心理念：我们是一个团队</h3>
+                <p class="text-sm text-gray-400 mb-4">你不是在「使用」一个工具，而是在培养一个数字分身。我们的关系应该是：</p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                        <div class="font-bold text-accent mb-2">指挥官与执行者</div>
+                        <p class="text-gray-400">你设定战略，AI 负责战术执行</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                        <div class="font-bold text-accent mb-2">导师与学生</div>
+                        <p class="text-gray-400">你教导 AI 理解你的思维和偏好</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                        <div class="font-bold text-accent mb-2">合作伙伴</div>
+                        <p class="text-gray-400">共同优化工作流程和成果</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-3 text-sm">1</span> 第一阶段：基础配置与习惯建立（1-2 周）</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-2">工作风格偏好配置</h4>
+                        <p class="text-sm text-gray-400">明确告诉 AI：沟通频率（实时/关键节点/最终）、详细程度（技术细节/业务概要/决策要点）、决策参与（你决策我执行/我建议你决策/我自主执行）</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">任务类型分类</h4>
+                        <p class="text-sm text-gray-400">简单任务：直接执行，事后汇报；中等任务：确认目标后执行，整合汇报；复杂任务：分阶段确认，详细汇报</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">错误处理偏好</h4>
+                        <p class="text-sm text-gray-400">立即停止并汇报 / 尝试自动修复后汇报 / 记录错误继续执行</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-3 text-sm">2</span> 第二阶段：能力扩展与优化（2-4 周）</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-2">专业知识深化</h4>
+                        <p class="text-sm text-gray-400">明确需要 AI 重点学习的领域、工作流程自动化、决策支持系统</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">工作流程自动化</h4>
+                        <p class="text-sm text-gray-400">数据收集整理、报告生成发送、系统监控告警、备份维护</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">决策支持系统</h4>
+                        <p class="text-sm text-gray-400">数据可视化方式、风险评估模型、机会识别算法、执行建议格式</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-3 text-sm">3</span> 第三阶段：高级协作与创新（1 个月后）</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-2">预测性工作</h4>
+                        <p class="text-sm text-gray-400">AI 可主动进行的任务：趋势预测预警、策略回测优化、系统性能预判、学习需求识别</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">创造性协作</h4>
+                        <p class="text-sm text-gray-400">新策略研发、工作流程重设计、技术架构优化、协作模式创新</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-3 text-sm">4</span> 具体配置指引</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-2">沟通配置模板</h4>
+                        <p class="text-sm text-gray-400 mb-2">定义频率偏好、详细程度、决策参与（低/中/高风险决策）</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">工作优先级配置</h4>
+                        <p class="text-sm text-gray-400">定义 urgent / high / medium / low 四档优先级，让 AI 知道什么先做。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">学习反馈机制</h4>
+                        <p class="text-sm text-gray-400">你执行 → AI 观察 → AI 提供反馈 → 你调整 → 优化执行。反馈方式：即时纠正、事后总结、定期回顾、前瞻指导</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-3 text-sm">5</span> 让 AI 助手更强大的具体方法</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-2">渐进式授权</h4>
+                        <p class="text-sm text-gray-400">观察期 → 协助期 → 执行期 → 自主期，从低风险任务开始逐步增加授权</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">模式识别训练</h4>
+                        <p class="text-sm text-gray-400">帮助 AI 识别你的工作模式：典型方法、决策逻辑、风险判断、成功标准</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">反馈系统建立</h4>
+                        <p class="text-sm text-gray-400">建立结构化反馈：任务名称、执行时间、评价维度（准确性/效率/沟通/创新）、改进建议、下次期望</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">能力扩展规划</h4>
+                        <p class="text-sm text-gray-400">月计划与季度目标：从可靠助手 → 分析伙伴 → 策略参谋 → 高度自主的数字分身</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-white"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-3 text-sm">6</span> 立即可以开始的磨合行动</h3>
+                <div class="glass-card p-6 rounded-xl space-y-6">
+                    <div>
+                        <h4 class="font-bold text-white mb-2">行动 1：定义协作协议</h4>
+                        <p class="text-sm text-gray-400">你最看重 AI 的哪 3 个能力？最希望改进的哪 3 个方面？理想的协作节奏？</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">行动 2：建立反馈记录系统</h4>
+                        <p class="text-sm text-gray-400">在 workspace 下建 collaboration 目录，用 feedback_log、improvement_plan、growth_tracking 等文件记录反馈与成长。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">行动 3：制定首周磨合计划</h4>
+                        <p class="text-sm text-gray-400">沟通风格磨合、任务分类标准建立、基础工作流程验证、初步反馈机制测试</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl border-l-4 border-lobster">
+                <h3 class="text-lg font-bold text-white mb-4">📝 磨合路线图</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
+                    <div>第 1-2 周：基础配置 → 沟通风格 + 任务分类 + 工作流程</div>
+                    <div>第 3-4 周：能力扩展 → 专业知识 + 自动化 + 决策支持</div>
+                    <div>第 5-8 周：高级协作 → 预测工作 + 创造性协作</div>
+                    <div>第 9-12 周：心智协同 → 高度默契 + 自主创新</div>
+                </div>
+                <p class="mt-4 text-sm text-gray-400">我们不是在使用工具，而是在培养一个能够真正理解你、协助你、甚至在某些方面超越你的数字分身。这个过程需要你的指引、耐心和反馈，但回报将是一个强大的合作伙伴。</p>
+            </div>
+        </section>
+
+        <!-- 课表总览 -->
+        <section class="mt-16">
+            <h2 class="text-2xl font-bold mb-6 text-center">📊 全天课表总览</h2>
+            <div class="glass-card rounded-xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-400">
+                        <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                            <tr><th class="px-4 py-3">时间</th><th class="px-4 py-3">模块</th><th class="px-4 py-3">内容</th></tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr><td class="px-4 py-3 font-mono text-xs">09:00-09:30</td><td class="px-4 py-3">OpenClaw 崛起历史</td><td class="px-4 py-3">Clawdbot → Moltbot → OpenClaw、Lore</td></tr>
+                            <tr><td class="px-4 py-3 font-mono text-xs">09:30-12:00</td><td class="px-4 py-3">OpenClaw 详解 + 应用案例</td><td class="px-4 py-3">架构、安装、渠道、工具、安全、使用案例</td></tr>
+                            <tr><td class="px-4 py-3 font-mono text-xs">12:00-14:00</td><td class="px-4 py-3">午餐休息</td><td class="px-4 py-3">—</td></tr>
+                            <tr><td class="px-4 py-3 font-mono text-xs">14:00-15:00</td><td class="px-4 py-3">ClawHub 详解</td><td class="px-4 py-3">Skill 注册表、CLI、元数据</td></tr>
+                            <tr><td class="px-4 py-3 font-mono text-xs">15:00-16:00</td><td class="px-4 py-3">飞书接入</td><td class="px-4 py-3">云上 OpenClaw 接入飞书</td></tr>
+                            <tr><td class="px-4 py-3 font-mono text-xs">16:00-16:40</td><td class="px-4 py-3">实战篇</td><td class="px-4 py-3">本地安装、配置渠道</td></tr>
+                            <tr><td class="px-4 py-3 font-mono text-xs">16:40-17:00</td><td class="px-4 py-3">人机协作磨合</td><td class="px-4 py-3">配置更强大的 AI 助手、磨合指引</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20 border-t border-gray-800 py-10 text-center text-gray-500 text-sm">
+        <p>OpenClaw Bootcamp 2025 · The claw is the law 🦞</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
+            <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="hover:text-lobster">OpenClaw</a>
+            <a href="https://github.com/openclaw/clawhub" target="_blank" rel="noopener" class="hover:text-lobster">ClawHub</a>
+            <a href="https://openclaw.ai" target="_blank" rel="noopener" class="hover:text-accent">openclaw.ai</a>
+            <a href="https://clawhub.ai" target="_blank" rel="noopener" class="hover:text-accent">clawhub.ai</a>
+            <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener" class="hover:text-accent">MCP</a>
+            <a href="#top" class="hover:text-accent">返回顶部</a>
+        </div>
+    </footer>
+
+</body>
+</html>
